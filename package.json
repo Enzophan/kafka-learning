@@ -10,7 +10,10 @@
     "kafka:up": "docker compose up -d",
     "kafka:down": "docker compose down",
     "kafka:logs": "docker compose logs -f kafka",
-    "topic:create": "tsc src/config/create-topic.ts"
+    "topic:create": "tsx src/config/create-topic.ts",
+    "producer": "tsx src/producers/order-producer.ts",
+    "consumer:notification": "tsx src/consumers/notification-consumer.ts",
+    "consumer:analytics": "tsx src/consumers/analytics-consumer.ts"
   },
   "keywords": [
     "orders",
@@ -24,6 +27,7 @@
   "dependencies": {
     "express": "^4.18.2",
     "kafkajs": "^2.2.4",
+    "tsx": "^4.23.12",
     "uuid": "^9.0.0"
   },
   "devDependencies": {

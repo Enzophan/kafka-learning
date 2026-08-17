@@ -18,6 +18,7 @@ function createOrderPlacedEvent(): OrderPlacedEvent {
         amount,
         createdAt: new Date().toISOString(),
     };
+    orderNumber++;
     return event;
 }
 
@@ -37,7 +38,8 @@ async function main() {
                 },
             ],
         });
-        console.log("Order sent:", event);
+        // console.log("Order sent:", event);
+        console.log(`Produced event: ${event.eventType} for orderId: ${event.orderId}, userId: ${event.userId}, amount: $${event.amount}`);
     }, 5000);
 }
 
